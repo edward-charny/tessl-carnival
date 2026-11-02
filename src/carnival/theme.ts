@@ -4,19 +4,19 @@
  */
 export const theme = {
   colors: {
-    background: '#141a0f',
-    surface: '#24301a',
-    text: '#e8dcb8',
-    muted: '#8f9a7a',
-    accent: '#b5893a',
-    danger: '#a3161a',
-    stripeA: '#8e2f1c',
-    stripeB: '#cfc2a0',
-    water: '#7fd13b',
-    wood: '#4a3524',
+    background: '#14110d', // soot
+    surface: '#33291f', // charred leather
+    text: '#f2e6c8', // bone
+    muted: '#b3a585', // dusty bone
+    accent: '#e0a526', // torch brass
+    danger: '#e0503a', // blood-orange (readable on dark)
+    stripeA: '#b8291c', // war-banner red
+    stripeB: '#ece0bf', // bleached bone
+    water: '#9be22d', // goblin toxic green
+    wood: '#6e4628',
   },
   font: {
-    family: '"Copperplate", "Rockwell", "Bookman Old Style", "Georgia", serif',
+    family: '"Superclarendon", "Rockwell", "Roboto Slab", "Bookman Old Style", "Georgia", serif',
     small: 14,
     body: 18,
     title: 32,
@@ -28,7 +28,7 @@ export const theme = {
   },
 } as const;
 
-/** Canvas font string, e.g. canvasFont('title') → 'bold 32px "Copperplate", …'. */
+/** Canvas font string, e.g. canvasFont('title') → 'bold 32px "Superclarendon", …'. */
 export function canvasFont(size: 'small' | 'body' | 'title', weight: 'normal' | 'bold' = 'normal') {
   return `${weight} ${theme.font[size]}px ${theme.font.family}`;
 }
