@@ -117,8 +117,14 @@ function draw(
 ) {
   const { colors } = theme;
 
-  ctx.fillStyle = colors.background;
+  ctx.fillStyle = colors.surface;
   ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+  // Backboard behind the rails, from the awning to 20 px below the lowest rail.
+  const lowest = RAILS[RAILS.length - 1];
+  const lowestRailBottom = lowest.y + lowest.radius + 4 + 6;
+  ctx.fillStyle = colors.wood;
+  ctx.fillRect(0, 40, WIDTH, lowestRailBottom + 20 - 40);
 
   // Booth awning.
   const stripe = WIDTH / 16;
@@ -128,7 +134,7 @@ function draw(
   }
 
   for (const rail of RAILS) {
-    ctx.fillStyle = colors.wood;
+    ctx.fillStyle = colors.background;
     ctx.fillRect(0, rail.y + rail.radius + 4, WIDTH, 6);
   }
 
@@ -147,7 +153,7 @@ function draw(
     ctx.fill();
   }
 
-  ctx.fillStyle = '#4fc3f7';
+  ctx.fillStyle = colors.water;
   for (const shot of state.shots) {
     ctx.beginPath();
     ctx.arc(shot.x, shot.y, 5, 0, Math.PI * 2);
@@ -172,10 +178,13 @@ function draw(
   ctx.fillStyle = colors.accent;
   ctx.fillRect(0, -8, 46, 16);
   ctx.restore();
-  ctx.fillStyle = colors.surface;
+  ctx.fillStyle = colors.background;
+  ctx.strokeStyle = colors.accent;
+  ctx.lineWidth = 3;
   ctx.beginPath();
   ctx.arc(CANNON.x, CANNON.y, 20, 0, Math.PI * 2);
   ctx.fill();
+  ctx.stroke();
 
   ctx.fillStyle = colors.text;
   ctx.font = canvasFont('body', 'bold');
