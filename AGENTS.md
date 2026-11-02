@@ -117,6 +117,7 @@ that `src/games/index.ts` finds.
 
 You often work on an issue with nobody around to answer questions.
 
+- **Plan and self-review with skills/tech-lead-architect/SKILL.md.** For any change to what players see (colours, fonts, drawing, layout, text, controls), also check it with skills/ux-review/SKILL.md before you finish, and put its summary in the pull request.
 - **Read the issue's "Done when"** and treat it as the checklist.
 - **Stay inside the issue.** If you notice something else wrong along the way,
   such as a stale doc, a weak test or a colour that skips the theme, don't fix
@@ -139,6 +140,11 @@ You often work on an issue with nobody around to answer questions.
   in a fork, lock it down, and deploy the carnival.
 - `skills/check-workshop-ready/SKILL.md`: check a laptop and fork are ready for
   the workshop. It only checks, and changes nothing without asking.
+- `skills/tech-lead-architect/SKILL.md`: plan, build and self-review a change
+  like a pragmatic senior tech lead, at the start of every issue and before the
+  pull request.
+- `skills/ux-review/SKILL.md`: review a change from the player's point of view
+  (usability, visual design and accessibility) before its pull request.
 - `tessl-factory/skills/`: sample skills for scheduled maintenance loops
   (rule mining, doc gardening, test health). Each one files issues and never
   changes code. `tessl-factory/` is a plugin, so a schedule in `tessl.json` runs
